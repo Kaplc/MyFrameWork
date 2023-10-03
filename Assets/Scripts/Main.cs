@@ -16,6 +16,7 @@ public class Main : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             PoolManager.Instance.GetObject("Cube");
+
         }
         if (Input.GetMouseButton(1))
         {
