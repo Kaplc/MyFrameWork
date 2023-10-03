@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseSingle<T> where T : class, new()
+public class BaseSingleton<T> where T : class, new()
 {
     private static T instance;
     
