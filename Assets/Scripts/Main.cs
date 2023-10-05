@@ -7,20 +7,18 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+        InputManger.Instance.Start();
+        EventCenter.Instance.AddEventListener(KeyCode.A + "按下", () =>
         {
-            PoolManager.Instance.GetObject("Cube");
-
-        }
-        if (Input.GetMouseButton(1))
+            print("A按下");
+        });
+        // EventCenter.Instance.AddEventListener(KeyCode.A + "长按", () =>
+        // {
+        //     print("A长按");
+        // });
+        EventCenter.Instance.AddEventListener(KeyCode.A + "抬起", () =>
         {
-            PoolManager.Instance.GetObject("Sphere");
-        }
+            print("A抬起");
+        });
     }
 }

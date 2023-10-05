@@ -35,7 +35,7 @@ public class EventInfo<T> : IEventInfo
 public class EventCenter : BaseSingleton<EventCenter>
 {
     // 接口父类装子类, 方便带泛型事件
-    private Dictionary<string, IEventInfo> eventDic;
+    private Dictionary<string, IEventInfo> eventDic = new Dictionary<string, IEventInfo>();
     
     /// <summary>
     /// 添加事件监听
