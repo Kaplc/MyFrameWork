@@ -28,7 +28,7 @@ public class PoolData
         targetObject.transform.parent = null;
         // 从list移除
         objectList.RemoveAt(0);
-        
+
         targetObject.SetActive(true);
         return targetObject;
     }
@@ -60,13 +60,18 @@ public class PoolManager : BaseSingleton<PoolManager>
     }
 
 
-    // 获得对象
-    public GameObject GetObject(string fullName)
+    /// <summary>
+    /// 获取对象
+    /// </summary>
+    /// <param name="fullName">资源名</param>
+    /// <param name="asyncHandleFun">异步加载时的执行函数</param>
+    /// <returns></returns>
+    public GameObject GetObject(string fullName, UnityAction<GameObject> asyncHandleFun = null)
     {
         // 初始化缓存池
         if (!poolObject) Init();
 
-        // 字典获取
+        // 检查字典有无对象数据
         if (!poolDic.ContainsKey(fullName))
         {
             // 无对象则创建新list
@@ -77,7 +82,24 @@ public class PoolManager : BaseSingleton<PoolManager>
         {
             return poolDic[fullName].Get();
         }
+
+        // 异步加载时的执行函数为空时执行同步加载
+        if (asyncHandleFun == null)
+        {
+            GameObject gameObject = GameObject.Instantiate(ResourcesFrameWork.Instance.Load<GameObject>(fullName));
+            gameObject.name = fullName;
+            return gameObject;
+        }
         
+        // 异步加载
+        ResourcesFrameWork.Instance.LoadAsync<GameObject>(fullName, resObj =>
+        {
+            GameObject gameObject = GameObject.Instantiate(resObj);
+            gameObject.name = fullName;
+            asyncHandleFun.Invoke(gameObject);
+        });
+
+
         return null;
     }
 
@@ -103,7 +125,10 @@ public class PoolManager : BaseSingleton<PoolManager>
     // 清空缓存池
     public void Clear()
     {
-        poolDic.Clear();
-        poolObject = null;
+        if (poolDic != null)
+        {
+            poolDic.Clear();
+            poolObject = null;
+        }
     }
 }
