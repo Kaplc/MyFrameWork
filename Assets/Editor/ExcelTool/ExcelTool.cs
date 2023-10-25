@@ -10,12 +10,7 @@ using UnityEngine;
 
 public static class ExcelTool
 {
-    public static string EXCEL_PATH = Application.dataPath + "/GameInfo/Excel/";
-    public static string INFOCLASS_PATH = Application.dataPath + "/Scripts/Data/InfoClass/";
-    public static string CLASS_CONTAINER_PATH = Application.dataPath + "/Scripts/Data/ClassContainer";
-    public static string BINARYFILE_PATH = Application.dataPath + "/GameInfo/";
-
-
+    
     // 使用菜单必须为静态方法
     [MenuItem("Editor/ExcelTool/ViewRules")]
     public static void ViewRules()
@@ -34,7 +29,7 @@ public static class ExcelTool
     public static void ExcelToBinary()
     {
         // 获取文件夹
-        DirectoryInfo directoriesInfo = Directory.CreateDirectory(EXCEL_PATH);
+        DirectoryInfo directoriesInfo = Directory.CreateDirectory(BinaryManager.EXCELFILE_PATH);
         // 获取文件
         FileInfo[] files = directoriesInfo.GetFiles();
         // 储存Excel表容器
@@ -66,6 +61,8 @@ public static class ExcelTool
                 }
             }
         }
+        
+        Debug.Log($"Finish! => Files in {BinaryManager.BINARYFILE_PATH}");
     }
 
     /// <summary>
@@ -74,9 +71,9 @@ public static class ExcelTool
     public static void GenerateClass(DataTable table)
     {
         // 判断路径
-        if (!Directory.Exists(INFOCLASS_PATH))
+        if (!Directory.Exists(BinaryManager.INFOCLASS_PATH))
         {
-            Directory.CreateDirectory(INFOCLASS_PATH);
+            Directory.CreateDirectory(BinaryManager.INFOCLASS_PATH);
         }
 
         // 获取字段名
@@ -95,7 +92,7 @@ public static class ExcelTool
 
         text += "}\n";
 
-        File.WriteAllText(INFOCLASS_PATH + $"{table.TableName}.cs", text);
+        File.WriteAllText(BinaryManager.INFOCLASS_PATH + $"{table.TableName}.cs", text);
 
         // 刷新Project
         AssetDatabase.Refresh();
@@ -106,9 +103,9 @@ public static class ExcelTool
     /// </summary>
     public static void GenerateContainer(DataTable table)
     {
-        if (!Directory.Exists(CLASS_CONTAINER_PATH))
+        if (!Directory.Exists(BinaryManager.CLASS_CONTAINER_PATH))
         {
-            Directory.CreateDirectory(CLASS_CONTAINER_PATH);
+            Directory.CreateDirectory(BinaryManager.CLASS_CONTAINER_PATH);
         }
 
         // 获取字段类型
@@ -123,7 +120,7 @@ public static class ExcelTool
             $"    public Dictionary<{fieldTypeRow[primaryKeyIndex]},{table.TableName}> {table.TableName}Dic = new Dictionary<{fieldTypeRow[primaryKeyIndex]},{table.TableName}>();\n";
         text += "}\n";
 
-        File.WriteAllText(INFOCLASS_PATH + $"{table.TableName}Container.cs", text);
+        File.WriteAllText(BinaryManager.INFOCLASS_PATH + $"{table.TableName}Container.cs", text);
         AssetDatabase.Refresh();
     }
 
@@ -132,13 +129,13 @@ public static class ExcelTool
     /// </summary>
     public static void GenerateBinary(DataTable table)
     {
-        if (!Directory.Exists(BINARYFILE_PATH))
+        if (!Directory.Exists(BinaryManager.BINARYFILE_PATH))
         {
-            Directory.CreateDirectory(BINARYFILE_PATH);
+            Directory.CreateDirectory(BinaryManager.BINARYFILE_PATH);
         }
 
         // 创建新的二进制文件
-        using (FileStream fileStream = new FileStream(BINARYFILE_PATH + table.TableName + ".zy", FileMode.Create, FileAccess.Write))
+        using (FileStream fileStream = new FileStream(BinaryManager.BINARYFILE_PATH + table.TableName + ".zy", FileMode.Create, FileAccess.Write))
         {
             // 定义储存规则
             // 1.写入真实数据的行数, (table.Rows.Count - 4)第5行才是数据
