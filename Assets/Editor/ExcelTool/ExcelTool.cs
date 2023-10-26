@@ -103,9 +103,9 @@ public static class ExcelTool
     /// </summary>
     public static void GenerateContainer(DataTable table)
     {
-        if (!Directory.Exists(BinaryManager.CLASS_CONTAINER_PATH))
+        if (!Directory.Exists(BinaryManager.INFOCLASS_PATH))
         {
-            Directory.CreateDirectory(BinaryManager.CLASS_CONTAINER_PATH);
+            Directory.CreateDirectory(BinaryManager.INFOCLASS_PATH);
         }
 
         // 获取字段类型

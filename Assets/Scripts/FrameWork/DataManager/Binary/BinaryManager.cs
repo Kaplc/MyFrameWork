@@ -11,8 +11,7 @@ using Object = UnityEngine.Object;
 public class BinaryManager: BaseSingleton<BinaryManager>
 {
     public static string EXCELFILE_PATH = Application.dataPath + "/GameInfo/Excel/";
-    public static string INFOCLASS_PATH = Application.dataPath + "/Scripts/Data/InfoClass/";
-    public static string CLASS_CONTAINER_PATH = Application.dataPath + "/Scripts/Data/ClassContainer/";
+    public static string INFOCLASS_PATH = Application.dataPath + "/Scripts/Data/";
     public static string BINARYFILE_PATH = Application.streamingAssetsPath + "/Data/";
 
     // 存放读取出来的Excel二进制文件数据
