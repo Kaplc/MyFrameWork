@@ -18,7 +18,9 @@ public class UIManager
     public static UIManager Instance => instance;
 
     private Dictionary<string, BasePanel> panelsDic = new Dictionary<string, BasePanel>();
+
     private Canvas panelCanvas;
+
     // 各层面板
     private Transform bottom;
     private Transform middle;
@@ -28,11 +30,16 @@ public class UIManager
     private UIManager()
     {
         // 获取canvas
-        panelCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-        if (!panelCanvas)
+        GameObject canvasObj = GameObject.Find("Canvas");
+        if (!canvasObj)
         {
             panelCanvas = GameObject.Instantiate(Resources.Load<GameObject>("UI/Canvas")).GetComponent<Canvas>();
         }
+        else
+        {
+            panelCanvas = canvasObj.GetComponent<Canvas>();
+        }
+
         // 获取各层
         bottom = panelCanvas.transform.Find("Bottom");
         if (!bottom)
@@ -40,32 +47,32 @@ public class UIManager
             bottom = new GameObject("Bottom").transform;
             bottom.SetParent(panelCanvas.transform);
         }
-        
-        middle =  panelCanvas.transform.Find("Middle");
+
+        middle = panelCanvas.transform.Find("Middle");
         if (!middle)
         {
             middle = new GameObject("Middle").transform;
             middle.SetParent(panelCanvas.transform);
         }
-        
+
         top = panelCanvas.transform.Find("Top");
         if (!top)
         {
             top = new GameObject("Top").transform;
             top.SetParent(panelCanvas.transform);
         }
-        
+
         system = panelCanvas.transform.Find("System");
         if (!system)
         {
             system = new GameObject("System").transform;
             system.SetParent(panelCanvas.transform);
         }
-        
+
         GameObject.DontDestroyOnLoad(panelCanvas);
     }
 
-    public T Show<T>(EUILayerType layerType= EUILayerType.Bottom, bool isFade = true, UnityAction callBack = null) where T : BasePanel
+    public T Show<T>(bool isFade = true, EUILayerType layerType = EUILayerType.Bottom, UnityAction callBack = null) where T : BasePanel
     {
         // 获取类名与预设体同名
         string panelName = typeof(T).Name;
@@ -81,7 +88,7 @@ public class UIManager
         T newPanel = GameObject.Instantiate(Resources.Load<GameObject>("UI/" + panelName), panelCanvas.transform).GetComponent<T>();
         panelsDic.Add(panelName, newPanel);
         newPanel.Show(isFade, callBack);
-        
+
         // 设置层级
         switch (layerType)
         {
@@ -98,11 +105,11 @@ public class UIManager
                 newPanel.transform.SetParent(system);
                 break;
         }
-        
+
         return newPanel;
     }
 
-    public void Hide<T>(bool isFade =true, UnityAction callBack = null) where T : BasePanel
+    public void Hide<T>(bool isFade = true, UnityAction callBack = null) where T : BasePanel
     {
         string panelName = typeof(T).Name;
 
