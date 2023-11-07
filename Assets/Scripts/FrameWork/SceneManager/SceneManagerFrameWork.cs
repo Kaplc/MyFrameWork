@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using ZyFrameWork;
 
 public class SceneManagerFrameWork : BaseSingleton<SceneManagerFrameWork>
 {

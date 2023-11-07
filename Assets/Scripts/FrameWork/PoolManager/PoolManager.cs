@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// 使用对象池的对象继承该接口
+/// </summary>
+public interface IPoolObject
+{
+    void OnPush(GameObject obj);
+    GameObject OnGet(string fullName);
+}
+
 public class PoolData
 {
     // 该容器的父对象
