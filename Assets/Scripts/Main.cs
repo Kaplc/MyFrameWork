@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 [Serializable]
 public class Person
@@ -34,10 +35,11 @@ public class Main : MonoBehaviour
 
         // Person p2 = BinaryManager.Instance.Load<Person>("Person");
 
-        ABManager.Instance.LoadAsync<GameObject>("test", "Cube", (gameObject) =>
-        {
-            
-        });
-    }
+        // ABManager.Instance.LoadAsync<GameObject>("test", "Cube", (gameObject) =>
+        // {
 
+        // });
+        XLuaManager.Instance.RunLua("main");
+        
+    }
 }

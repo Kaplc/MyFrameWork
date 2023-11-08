@@ -99,7 +99,7 @@ public class PoolManager : BaseSingleton<PoolManager>
             gameObject.name = fullName;
             return gameObject;
         }
-        
+
         // 异步加载
         ResourcesFrameWork.Instance.LoadAsync<GameObject>(fullName, resObj =>
         {
