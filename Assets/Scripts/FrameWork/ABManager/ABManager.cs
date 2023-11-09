@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
 using Object = UnityEngine.Object;
@@ -76,6 +77,9 @@ public class ABManager : BaseSingleton<ABManager>
     /// <returns></returns>
     public T Load<T>(string abName, string resName) where T : Object
     {
+        // 不存在该包直接退出
+        if (!File.Exists(abPath + abName)) return null;
+
         LoadDependencyPackage(abName);
 
         if (!assetBundlesDic.ContainsKey(abName))
@@ -103,6 +107,9 @@ public class ABManager : BaseSingleton<ABManager>
     /// <returns></returns>
     public Object Load(string abName, string resName, Type type)
     {
+        // 不存在该包直接退出
+        if (!File.Exists(abPath + abName)) return null;
+
         LoadDependencyPackage(abName);
 
         if (!assetBundlesDic.ContainsKey(abName))
@@ -129,6 +136,9 @@ public class ABManager : BaseSingleton<ABManager>
     /// <returns></returns>
     public Object Load(string abName, string resName)
     {
+        // 不存在该包直接退出
+        if (!File.Exists(abPath + abName)) return null;
+
         LoadDependencyPackage(abName);
 
         if (!assetBundlesDic.ContainsKey(abName))
@@ -153,6 +163,9 @@ public class ABManager : BaseSingleton<ABManager>
     /// <typeparam name="T"></typeparam>
     public void LoadAsync<T>(string abName, string resName, UnityAction<T> callback) where T : class
     {
+        // 不存在该包直接退出
+        if (!File.Exists(abPath + abName)) return;
+
         LoadDependencyPackage(abName);
 
         // 是否加载过ab包
@@ -205,6 +218,9 @@ public class ABManager : BaseSingleton<ABManager>
 
     public void LoadAsync(string abName, string resName, Type type, UnityAction<Object> callback)
     {
+        // 不存在该包直接退出
+        if (!File.Exists(abPath + abName)) return;
+
         LoadDependencyPackage(abName);
 
         // 是否加载过ab包
@@ -244,6 +260,9 @@ public class ABManager : BaseSingleton<ABManager>
 
     public void LoadAsync(string abName, string resName, UnityAction<Object> callback)
     {
+        // 不存在该包直接退出
+        if (!File.Exists(abPath + abName)) return;
+
         LoadDependencyPackage(abName);
 
         // 是否加载过ab包

@@ -40,6 +40,5 @@ public class Main : MonoBehaviour
 
         // });
         XLuaManager.Instance.RunLua("main");
-        
     }
 }
