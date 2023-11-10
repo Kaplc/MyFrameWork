@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UI;
 
 [Serializable]
 public class Person
@@ -40,5 +41,10 @@ public class Main : MonoBehaviour
 
         // });
         XLuaManager.Instance.RunLua("main");
+
+        // GameObject canvas =  GameObject.Find("Cavas");
+        // Instantiate
+        // GameObject mainPanel = Instantiate(Resources.Load("MainPanel"), canvas.transform)
+        
     }
 }
