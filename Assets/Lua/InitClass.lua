@@ -1,9 +1,15 @@
 -- 初始化CS类
--- UnityEngine
+-------------- UnityEngine -------------
 GameObject = CS.UnityEngine.GameObject
 Transform = CS.UnityEngine.Transform
 Instantiate = CS.UnityEngine.Object.Instantiate
 Resources = CS.UnityEngine.Resources
+Destroy = CS.UnityEngine.Object.Destroy
+RectTransform = CS.UnityEngine.RectTransform
+Vector2 = CS.UnityEngine.Vector2
+
+-- 资源类型
+Sprite = CS.UnityEngine.Sprite
 
 -- UI类
 Button = CS.UnityEngine.UI.Button
@@ -12,6 +18,15 @@ Text = CS.UnityEngine.UI.Text
 ScrollRect = CS.UnityEngine.UI.ScrollRect
 Image = CS.UnityEngine.UI.Image
 
----------------------------------------
--- Custom
+----------------Custom-----------------------
+-- FrameWork
 ABManager = CS.ABManager
+BinaryManager = CS.BinaryManager
+
+-- DataInfo
+ItemInfo = CS.ItemInfo
+ItemInfoContainer = CS.ItemInfoContainer
+StoneInfo = CS.StoneInfo
+StoneInfoContainer = CS.StoneInfoContainer
+WeaponInfo = CS.WeaponInfo
+WeaponInfoContainer = CS.WeaponInfoContainer

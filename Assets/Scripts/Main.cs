@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
+using XLua;
 
 [Serializable]
 public class Person
@@ -12,6 +14,15 @@ public class Person
     public float height = 1.7f;
     public bool sex = true;
     public string name = "aaa";
+}
+
+// 为系统类添加LuaCallCsharp
+public static class AddSystemClassToLua
+{
+    [CSharpCallLua]
+    public static List<Type> systemClass = new List<Type>(){
+        typeof(UnityAction<bool>),
+    };
 }
 
 public class Main : MonoBehaviour
@@ -41,10 +52,12 @@ public class Main : MonoBehaviour
 
         // });
         XLuaManager.Instance.RunLua("main");
-
-        // GameObject canvas =  GameObject.Find("Cavas");
-        // Instantiate
-        // GameObject mainPanel = Instantiate(Resources.Load("MainPanel"), canvas.transform)
-        
-    }
+        // Toggle g;
+        // g.onValueChanged.AddListener((isOn) =>
+        // {
+        // });
+        // transform.GetComponentsInChildren() 
+        // RectTransform r = transform as RectTransform;
+        // r.anchoredPosition = new Vector2(1, 2);
+    } 
 }

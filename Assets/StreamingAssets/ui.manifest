@@ -1,0 +1,55 @@
+ManifestFileVersion: 0
+CRC: 2242321975
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0bb96044b2b43eb08e94679f87aeeb63
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 544244e4a6f9573a1bcdf4af9548f8ae
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/ImageCell.prefab
+- "Assets/ArtRes/UI/icon/\u9053\u5177\u56FE\u6807/\u4E3B\u89D2\u88C5\u5907/\u88C5\u5907\u5F3A\u5316/Silver.png"
+- "Assets/ArtRes/UI/icon/\u5BA0\u7269\u88C5\u5907/Red.png"
+- "Assets/ArtRes/UI/icon/\u5BA0\u7269\u88C5\u5907/Blue.png"
+- "Assets/ArtRes/UI/icon/\u9053\u5177\u56FE\u6807/\u4E3B\u89D2\u88C5\u5907/\u88C5\u5907\u5F3A\u5316/Gold.png"
+- Assets/Resources/RolePanel.prefab
+- "Assets/ArtRes/UI/icon/\u4E3B\u89D2\u88C5\u5907/\u5C04\u624B/1\u7EA7\u730E\u4EBA/Fire.png"
+- "Assets/ArtRes/UI/icon/\u4E3B\u89D2\u88C5\u5907/\u5C04\u624B/1\u7EA7\u730E\u4EBA/Hand.png"
+- Assets/Resources/MainPanel.prefab
+Dependencies: []
