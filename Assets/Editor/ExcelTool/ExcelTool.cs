@@ -22,6 +22,9 @@ public static class ExcelTool
         Debug.Log("3.第三行用‘Key’标识主键位置");
         Debug.Log("4.第四行为字段名中文中文提示");
         Debug.Log("5.第五行开始真正的数据");
+        Debug.Log($"Excel配置表路径: {BinaryManager.EXCELFILE_PATH}");
+        Debug.Log($"生成数据信息类路径: {BinaryManager.INFOCLASS_PATH}");
+        Debug.Log($"生成的二进制文件路径: {BinaryManager.BINARYFILE_PATH}");
     }
 
 
