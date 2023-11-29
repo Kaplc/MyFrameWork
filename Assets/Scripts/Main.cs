@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 using XLua;
+using ZFrameWork;
 
 [Serializable]
 public class Person
