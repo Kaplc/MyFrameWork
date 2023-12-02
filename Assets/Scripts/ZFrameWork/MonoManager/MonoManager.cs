@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Internal;
 
-namespace ZFrameWork
+namespace ZFramework
 {
     public class MonoManager : BaseMonoAutoSingleton<MonoManager>
     {

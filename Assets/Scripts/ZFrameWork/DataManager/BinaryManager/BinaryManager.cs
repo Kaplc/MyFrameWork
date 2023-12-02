@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using UnityEngine;
 
-namespace ZFrameWork
+namespace ZFramework
 {
     public class BinaryManager: BaseSingleton<BinaryManager>
 {

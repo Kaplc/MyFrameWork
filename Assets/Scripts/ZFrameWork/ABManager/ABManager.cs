@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Object = UnityEngine.Object;
 
-namespace ZFrameWork
+namespace ZFramework
 {
     public class ABManager : BaseSingleton<ABManager>
 {

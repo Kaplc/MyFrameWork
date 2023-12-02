@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ZFrameWork
+namespace ZFramework
 {
     /// <summary>
     /// 使用对象池的对象要继承该接口

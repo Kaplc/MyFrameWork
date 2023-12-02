@@ -5,8 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
-using XLua;
-using ZFrameWork;
+using ZFramework;
 
 [Serializable]
 public class Person
@@ -17,14 +16,6 @@ public class Person
     public string name = "aaa";
 }
 
-// 为系统类添加LuaCallCsharp
-public static class AddSystemClassToLua
-{
-    [CSharpCallLua]
-    public static List<Type> systemClass = new List<Type>(){
-        typeof(UnityAction<bool>),
-    };
-}
 
 public class Main : MonoBehaviour
 {
@@ -52,7 +43,6 @@ public class Main : MonoBehaviour
         // {
 
         // });
-        XLuaManager.Instance.RunLua("main");
         // Toggle g;
         // g.onValueChanged.AddListener((isOn) =>
         // {

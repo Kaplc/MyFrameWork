@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ZFrameWork
+namespace ZFramework
 {
     public class MusicData
     {

@@ -5,7 +5,7 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 using UnityEngine;
 
-namespace ZFrameWork
+namespace ZFramework
 {
     public class SerializerDictionary<TKey, TValue> : Dictionary<TKey, TValue>, IXmlSerializable
     {

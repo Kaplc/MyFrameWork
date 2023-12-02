@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ZFrameWork
+namespace ZFramework
 {
     public class BaseMonoAutoSingleton<T> : MonoBehaviour where T: MonoBehaviour
     {

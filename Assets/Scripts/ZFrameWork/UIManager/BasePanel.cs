@@ -2,7 +2,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ZFrameWork
+
+namespace ZFramework
 {
     public abstract class BasePanel : MonoBehaviour
     {

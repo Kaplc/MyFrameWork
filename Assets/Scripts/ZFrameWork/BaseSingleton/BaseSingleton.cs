@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ZFrameWork
+namespace ZFramework
 {
     public class BaseSingleton<T> where T : class, new()
     {

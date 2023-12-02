@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ZFrameWork
+namespace ZFramework
 {
     // 空接口装子类
 public interface IEventInfo

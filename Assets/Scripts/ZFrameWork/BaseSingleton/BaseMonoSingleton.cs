@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ZFrameWork
+namespace ZFramework
 {
     /// <summary>
     /// 手动mono单例要拖动到对象上

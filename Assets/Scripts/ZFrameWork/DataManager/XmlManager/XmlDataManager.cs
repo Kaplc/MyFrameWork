@@ -6,7 +6,7 @@ using System.Net;
 using System.Xml.Serialization;
 using UnityEngine;
 
-namespace ZFrameWork
+namespace ZFramework
 {
     public class XmlDataManager: BaseSingleton<XmlDataManager>
     {

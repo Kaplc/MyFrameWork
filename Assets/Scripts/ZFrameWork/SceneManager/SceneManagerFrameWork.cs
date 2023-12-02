@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ZFrameWork.SceneManager
+namespace ZFramework
 {
     public class ZFrameWorkSceneManager : BaseSingleton<ZFrameWorkSceneManager>
     {

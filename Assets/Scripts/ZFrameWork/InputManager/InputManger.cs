@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace ZFrameWork
+namespace ZFramework
 {
     public class InputManger : BaseSingleton<InputManger>
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 using System.IO;
 using LitJson;
 
-namespace ZFrameWork
+namespace ZFramework
 {
     /// <summary>
     /// json解析工具类型
